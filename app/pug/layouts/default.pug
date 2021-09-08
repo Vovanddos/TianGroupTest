@@ -1,0 +1,73 @@
+-var cmsTpl = '/'
+
+mixin svg(id,cls)
+    -let cls = cls ? ' ' + cls : ''
+    svg(class='icon icon-' + id + cls width="100%" height="100%" xmlns="http://www.w3.org/2000/svg")
+        use(xlink:href=cmsTpl + 'images/svg/sprite.svg#' + id)
+
+doctype html
+html(lang='ru')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport', content='width=device-width,initial-scale=1,shrink-to-fit=no,maximum-scale=1,height=device-height,viewport-fit=cover')
+        title TianGroup
+        base(href='/')
+        meta(name='description', content="")
+        meta(name='keywords', content="")
+        meta(property='og:title', content="")
+        meta(property="og:description" content="")
+        meta(property='og:type', content='website')
+        meta(property='og:url', content="")
+        meta(property='og:image', content=cmsTpl + 'assets/images/logo.png')
+        meta(name='theme-color' content="#fff")
+        link(rel='stylesheet' href=cmsTpl + 'css/vendor.min.css')
+        link(rel='stylesheet' href=cmsTpl + 'css/common.min.css')
+    body
+
+
+        block main
+
+        <!-----------FOOTER----------->
+
+        footer.footer
+            .wrapper
+                .footer__top
+                    .ic-item
+                        svg.phone_ic.ic
+                            use(xlink:href='images/svg/sprite.svg#phone')
+                        .ic__text.ic__text--footer
+                            p
+                                | Телефон администратора
+                                br
+                                strong 8 800 2000 600
+                    .ic-item
+                        svg.phone_ic.ic
+                            use(xlink:href='images/svg/sprite.svg#phone')
+                        .ic__text.ic__text--footer
+                            p
+                                | Телефон администратора
+                                br
+                                span.border
+                                    strong 8 800 2000 600
+                    .ic-item
+                        svg.phone_ic.ic
+                            use(xlink:href='images/svg/sprite.svg#phone')
+                        .ic__text.ic__text--footer
+                            p
+                                | Телефон администратора
+                                br
+                                strong 8 800 2000 600
+                .footer__bottom
+                    .footer__text © ИП Фёдоров С.С., 2017
+                    .footer__text
+                        svg.tian_ic.ic
+                            use(xlink:href='images/svg/sprite.svg#tian')
+                        p
+                            span.uppercase ИНТЕРНЕТ-АГЕНТСТВО TIAN GROUP:
+                            br
+                            span.border-footer создание и продвижение сайтов Челябинск
+
+
+                        script(src=cmsTpl + 'js/vendor.min.js')
+                        script(src=cmsTpl + 'js/common.min.js')

@@ -1,0 +1,763 @@
+/*===== PREPARE =====*/
+*,
+*:before,
+*:after
+  box-sizing border-box
+
+:root
+  --main #fab91e
+  --hover #d39500
+  --white #FFF
+  --blue-h #080425
+  --blue-p #6b687c
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p
+  margin 0
+
+body
+  margin 0
+  -webkit-font-smoothing antialiased
+  font-family 'ProximaNova', sans-serif
+  font-weight normal
+  font-size 18px
+
+  &.mouse
+    .nav__list
+      & > li
+        &:hover
+          .sub-nav__list
+            display block
+
+    .sub-nav__list
+      & > li
+        &:hover
+          .sub-sub-nav__list
+            display block
+
+  &.touch
+    .sub-nav__list
+      &.open
+        display block
+
+    .sub-sub-nav__list
+      &.open
+        display block
+
+    .arrow
+      display block
+
+img
+  max-width 100%
+  object-fit cover
+
+section
+  margin-top 70px
+
+.uppercase
+  text-transform uppercase
+
+.border
+  border-bottom 1px solid var(--main)
+
+.overflow
+  overflow hidden
+
+.none
+  display none
+
+.show
+  display block
+
+.wrapper
+  width 100%
+  max-width 1173px
+  margin 0 auto
+
+.ic
+  width 12px
+  height 12px
+
+.btn
+  display inline-block
+  vertical-align top
+  padding 20px 25px
+  margin 10px
+  border 0
+  cursor pointer
+  background var(--main)
+  font-family 'GothamPro', sans-serif
+  font-size 15px
+  color #916a21
+  font-weight 500
+  text-decoration none
+  text-align center
+  transition background .1s linear
+
+  &:hover
+    background var(--hover)
+
+/*===== HEADER =====*/
+.burger_ic
+  width 24px
+  height 24px
+  fill white
+
+.btn--menu
+  display none
+  position fixed
+  top 0
+  padding 10px 15px
+
+.menu
+  width 100%
+  height 100%
+  top 0
+  left 0
+  z-index 99
+
+.mouse-ic
+  position absolute
+  left 0
+  bottom 0
+  z-index 3
+  fill white
+  display flex
+  flex-direction column
+  align-items center
+
+.mouse_ic
+  width 24px
+  height 24px
+
+.mouse-arrow_ic
+  width 6px
+  height 6px
+  margin 25px
+
+.header
+  padding-top 10px
+  height 100vh
+  position relative
+  color var(--white)
+
+.header__top
+  display flex
+  justify-content space-between
+  align-items center
+  flex-wrap wrap
+  padding 0 65px
+
+.ic-item
+  display flex
+
+  .ic
+    align-self center
+    margin-right 20px
+
+.ic__text
+  font-family 'GothamPro', sans-serif
+  font-weight 500
+  font-size 13px
+  opacity .6
+  cursor pointer
+  transition opacity .2s linear
+
+  p
+    margin 8px 0
+
+    &:first-child
+      font-weight normal
+
+  &:hover
+    opacity 1
+
+/*===== SLIDER =====*/
+.card
+  background-color #404990
+  background-repeat no-repeat
+  background-position center
+  background-size cover
+
+  &:nth-child(1)
+    background-image url("../images/header.jpg")
+  &:nth-child(2)
+    background-image url("../images/header.jpg")
+
+  &:nth-child(3)
+    background-image url("../images/header.jpg")
+
+  &:nth-child(4)
+    background-image url("../images/header.jpg")
+
+  &:nth-child(5)
+    background-image url("../images/header.jpg")
+
+
+.swiper-container
+  height 100%
+  width 100%
+  position absolute
+  left 0
+  top 0
+
+.section-content
+  position relative
+  z-index 5
+
+.nav_ic
+  width 20px
+  height 20px
+  fill white
+
+  &:hover
+    fill var(--main)
+
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction
+  left -186px
+  bottom 50px
+
+.swiper-container-horizontal
+  & > .swiper-pagination-bullets
+    .swiper-pagination-bullet
+      margin 0 10px
+
+.swiper-pagination
+  text-align end
+
+.swiper-pagination-bullet
+  background #9f9e9f
+  opacity 1
+  cursor pointer
+  width 5px
+  height 5px
+
+  &:hover
+    background var(--main)
+
+.swiper-pagination-bullet-active
+  background white
+
+.swiper-button-prev::after,
+.swiper-button-next::after
+  display none
+
+.swiper-button-prev,
+.swiper-button-next
+  background-repeat no-repeat
+
+.arrow_ic
+  padding-top 4px
+  margin-left 10px
+
+/*===== NAV =====*/
+.nav
+  margin-top 10px
+  width 100%
+  background #080425
+  font-family 'ProximaNova', sans-serif
+  font-size 13px
+  font-weight 600
+
+  li
+    position relative
+    list-style none
+
+  a
+    color white
+    text-decoration none
+
+.nav__list
+  display flex
+  list-style none
+  text-transform uppercase
+  flex-wrap wrap
+  justify-content space-between
+  padding 0
+
+  li
+    padding 35px 50px
+    cursor pointer
+    transition background .2s linear
+
+    &:hover
+      background #211e3b
+
+.sub-nav__list
+  display none
+  min-width 100%
+  position absolute
+  left 0
+  top 60px
+  z-index 2
+  padding 20px 0 0 0
+
+  & > li
+    background-color #211e3b
+    padding 20px 36px
+    font-family 'ProximaNova', sans-serif
+    font-size 14px
+    font-weight normal
+    text-transform none
+
+    &:hover
+      background-color #38354f
+
+.sub-nav__link
+  color #000
+  display inline-block
+
+.sub-sub-nav__list
+  display none
+  position absolute
+  top 0
+  left 100%
+  min-width 300px
+  padding 0 0 0 5px
+
+  & > li
+    background-color #211e3b
+
+    &:hover
+      background-color #38354f
+
+.sub-sub-nav__link
+  color #fff
+  display inline-block
+  padding 5px 10px
+
+.arrow
+  display none
+  position absolute
+  right 0
+  top 12px
+  width 100%
+  height 100%
+
+  &.active
+    transform rotate(-180deg)
+
+/*===== INTRO TEXT =====*/
+.header__text
+  max-width 540px
+  margin-top 200px
+  margin-left 100px
+
+.header__title
+  font-family 'PlayfairDisplay', sans-serif
+  font-size 52px
+  font-weight bold
+  line-height 1.2
+  margin-bottom 25px
+
+.header__sub-title
+  font-family 'GothamPro', sans-serif
+  font-size 18px
+  font-weight normal
+  margin-bottom 40px
+  line-height 2
+
+/*===== SECTION TEXT =====*/
+.section__text
+  max-width 910px
+  margin 0 auto
+  display flex
+  flex-direction column
+
+.square
+  width 11px
+  height 11px
+  margin 0 auto 7px auto
+  background var(--main)
+
+.sup-title
+  text-transform uppercase
+  text-align center
+  font-size 12px
+  font-family 'ProximaNova', sans-serif
+  font-weight normal
+  color var(--blue-h)
+
+.title
+  font-family 'PlayfairDisplay', sans-serif
+  font-weight bold
+  text-align center
+  font-size 52px
+  color var(--blue-h)
+  margin-bottom 20px
+
+.sub-title
+  text-align center
+  font-size 22px
+  font-family 'PlayfairDisplay', sans-serif
+  font-weight normal
+  font-style italic
+  color var(--blue-h)
+  margin-top 20px
+  margin-bottom 50px
+  line-height 35px
+
+.text
+  font-family 'ProximaNova', sans-serif
+  font-weight normal
+  color var(--blue-p)
+  font-size 18px
+  margin 0 auto 25px auto
+  max-width 730px
+  text-align center
+  line-height 30px
+
+.section___btn
+  margin 0 auto
+
+/*===== BENEFITS =====*/
+.benefits__content
+  display flex
+  flex-wrap wrap
+  justify-content center
+
+.benefits__item
+  margin-top 30px
+  display flex
+  flex-direction column
+  width calc(100% / 3)
+  padding 0 33px
+  text-align center
+
+.benefits_ic
+  width 77px
+  height 77px
+  margin 0 auto
+
+.benefits__title
+  font-size 16px
+  color var(--blue-h)
+  font-family 'PlayfairDisplay', sans-serif
+  font-weight bold
+  text-align center
+  margin 40px 0 18px 0
+
+.benefits__sub-title
+  font-size 14px
+  color var(--blue-p)
+  font-family 'ProximaNova', sans-serif
+  font-weight normal
+  text-align center
+
+/*===== PHOTOSHOOT =====*/
+.photoshoot__content
+  display flex
+  flex-wrap wrap
+
+.photoshoot__item
+  margin-right 50px
+  margin-bottom 83px
+  position relative
+  display flex
+  flex-direction column
+
+.btn--photoshoot
+  padding 12px 11px
+  margin 0 0 0 36px
+
+.btn_ic
+  fill var(--white)
+  width 20px
+  height 13px
+
+.photoshoot__text
+  font-family 'ProximaNova', sans-serif
+  font-weight bold
+  font-size 18px
+  color var(--blue-h)
+  position absolute
+  bottom -48px
+  right 0
+  z-index 1
+  background white
+  padding 44px
+  max-width 262px
+  cursor pointer
+  transition color .2s linear
+
+  &:hover
+    color var(--main)
+
+.photoshoot__text--cut
+  right 30px
+  max-width 233px
+
+.photoshoot__img
+  max-width 340px
+  max-height 227px
+  overflow hidden
+
+  img
+    -moz-transition all .5s ease-out
+    -o-transition all .5s ease-out
+    -webkit-transition all .5s ease-out
+
+    &:hover
+      -webkit-transform scale(1.1)
+      -moz-transform scale(1.1)
+      -o-transform scale(1.1)
+
+/*===== HALLS =====*/
+.halls
+  margin 0
+
+.halls__text
+  color var(--blue-h)
+  position relative
+  top 32px
+  left -39px
+  z-index 1
+  background white
+  padding 50px
+
+.halls__content
+  margin-top 30px
+  display flex
+  align-items flex-start
+  position relative
+
+.halls__title
+  font-family 'PlayfairDisplay', sans-serif
+  font-weight bold
+  font-size 24px
+  margin-bottom 30px
+
+.halls__sub-title
+  display flex
+  color var(--blue-p)
+
+  &::before
+    content ""
+    margin-top 11px
+    margin-right 20px
+    width 61px
+    height 1px
+    background var(--blue-p)
+
+.halls__img
+  position relative
+
+.halls__nav
+  position absolute
+  bottom -3%
+  right -7%
+  z-index 9999
+  display flex
+
+  .btn
+    margin 0
+
+.btn--halls
+  margin 25px 67px
+
+.slider_ic
+  width 19px
+
+.halls__slider
+  max-width 586px
+  position relative
+  margin 0 auto
+
+.swiper-container1
+  overflow hidden
+  width 100%
+
+/*===== CARDS =====*/
+.cards__inner
+  display flex
+  flex-wrap wrap
+
+.cards__item
+  display flex
+  width 50%
+  justify-content space-around
+  padding 33px
+  cursor pointer
+  background var(--main)
+  transition background .2s linear
+  align-items center
+
+  &:hover
+    background var(--hover)
+
+.cards__title
+  max-width 200px
+  font-family 'PlayfairDisplay', sans-serif
+  font-weight bold
+  font-size 16px
+  color black
+
+.cards_ic
+  width 74px
+  height 74px
+
+/*===== FOOTER =====*/
+.footer__top
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+  padding 60px 70px
+  border-bottom 1px solid var(--blue-p)
+
+.footer__bottom
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+  padding 30px 50px
+  color var(--blue-p)
+
+.footer__text
+  display flex
+  font-family 'ProximaNova', sans-serif
+  font-weight normal
+  font-size 12px
+  color #7d7c8a
+
+.tian_ic
+  width 55px
+  height 29px
+  fill #c2bcc2
+
+.border-footer
+  border-bottom 1px solid #dfdee2
+
+.ic__text--footer
+  opacity 1
+  color black
+  line-height 1.5
+
+@media (max-width: 1200px)
+  .photoshoot__content
+    justify-content center
+
+@media (max-width: 992px)
+  .halls__content
+    display block
+
+  .halls__nav
+    right 45%
+
+  .halls__text
+    padding 40px
+    display flex
+    flex-direction column
+    align-items center
+    position static
+
+@media (max-width: 767px)
+  .btn--menu
+    display block
+    z-index 999
+
+  .menu
+    position fixed
+    background #080425
+    display none
+    overflow-y auto
+
+  .show
+    display block
+
+  .section-content
+    margin 0 20px
+
+  .swiper-pagination
+    text-align center
+
+  .nav__list
+    display block
+
+    & > li
+      margin 0 0 10px 0
+
+  .sub-nav__list
+    position relative
+    left 0
+    top 0
+
+  .sub-sub-nav__list
+    padding 0 5px
+    position relative
+    left 0
+    top 13px
+
+  .logo
+    margin 10px 0
+
+  .header__top
+    justify-content space-around
+    padding 50px 0 0 0
+
+  .header__text
+    margin 20px auto 0 auto
+    text-align center
+
+  .header__title
+    font-size 40px
+
+  .header__sub-title
+    font-size 14px
+
+  .header
+    display flex
+    justify-content center
+    flex-direction column
+
+  .wrapper
+    padding 10px
+
+  .benefits__item
+    width calc(100% / 2)
+
+  .cards__item
+    width 100%
+
+  .card
+    background-position right !important
+
+  .swiper-container-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction
+    left 0
+    bottom 30px
+
+@media (max-width: 600px)
+  .benefits__item
+    width 100%
+
+  .footer__text
+    margin 10px 0
+
+  .footer__bottom
+    text-align center
+    justify-content center
+
+  .footer__top
+    justify-content center
+    padding 60px 0
+
+  .photoshoot__item
+    margin-right 0
+
+  .halls__nav
+    right 41%
+
+  .header__top
+    flex-direction column
+    padding-top 77px
+
+@media (max-width: 360px)
+  .halls__nav
+    right 37%

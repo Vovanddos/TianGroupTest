@@ -1,0 +1,6 @@
+.git
+.idea
+*.iml
+public
+node_modules
+package-lock.json

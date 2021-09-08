@@ -1,0 +1,318 @@
+extends ../layouts/default.pug
+
+
+
+block main
+
+    <!-----------VARIABLES----------->
+    script let pageName = 'main';
+    -
+        const photoshoot = [
+            {
+                name: 'Семейная фотосессия',
+                img: 'images/1.jpg',
+                cut: '',
+            },
+            {
+                name: 'Детская фотосессия',
+                img: 'images/2.jpg',
+                cut: '',
+            },
+            {
+                name: 'Индивидуальная фотосессия',
+                img: 'images/3.jpg',
+                cut: 'photoshoot__text--cut',
+            },
+            {
+                name: 'Свадебная фотосессия',
+                img: 'images/4.jpg',
+                cut: 'photoshoot__text--cut',
+            },
+            {
+                name: 'Love Story фотосессия',
+                img: 'images/5.jpg',
+                cut: '',
+            },
+            {
+                name: 'Для беременных фотосессия',
+                img: 'images/6.jpg',
+                cut: '',
+            },
+            {
+                name: 'Бизнес портрет',
+                img: 'images/7.jpg',
+                cut: '',
+            },
+            {
+                name: 'Рекламная съемка',
+                img: 'images/8.jpg',
+                cut: 'photoshoot__text--cut',
+            },
+            {
+                name: 'Репортажная съемка',
+                img: 'images/9.jpg',
+                cut: '',
+            },
+            {
+                name: 'Фото проекты',
+                img: 'images/10.jpg',
+                cut: '',
+            },
+        ];
+
+        const benefits = [
+            {
+                name: 'Современные декорацмм',
+                body: 'Мы постоянно совершенствуемся, основываясь на мировых  тенденциях, практичности и пожеланиях наших клиентов.',
+                svg: 'decoration',
+            },
+            {
+                name: '6 различных залов ',
+                body: 'От классики до футуризма, все для вашего творчества и реализации всех, даже самых сложных творческих идей.',
+                svg: 'halls',
+            },
+            {
+                name: 'Профессиональные фотографы ',
+                body: 'Наши фотографы работают во всех популярных видах жанра фотографии и обеспечивают качественный результат.',
+                svg: 'photo',
+            },
+            {
+                name: 'Профессиональная техника',
+                body: 'Фотостудия имеет профессиональную технику и свет для сьёмки, есть все необходимое для комфортной работы и получения желаемого результата.',
+                svg: 'tech',
+            },
+            {
+                name: 'Открыты для сотрудничества',
+                body: 'Мы открыты для сотрудничества, проводим мастер-классы фотографов, семинары, выездные регистрации, воркшопы и т.д.',
+                svg: 'employees',
+            },
+        ];
+
+    <!-----------BURGER----------->
+    .btn.btn--menu
+        svg.burger_ic.ic
+            use(xlink:href='images/svg/sprite.svg#burger')
+
+    <!-----------HEADER----------->
+    header.header
+        .mouse-ic
+            svg.mouse_ic.ic
+                use(xlink:href='images/svg/sprite.svg#mouse')
+            svg.mouse-arrow_ic.ic
+                use(xlink:href='images/svg/sprite.svg#mouse-arrow')
+        .wrapper
+            .section-content
+                .menu
+                    .header__top
+                        .ic-item
+                            svg.phone_ic.ic
+                                use(xlink:href='images/svg/sprite.svg#phone')
+                            .ic__text
+                                p Телефон администратора
+                                p 8 800 2000 600
+                        img.logo(src='images/logo.png' alt='')
+                        .ic-item
+                            svg.map_ic.ic
+                                use(xlink:href='images/svg/sprite.svg#map')
+                            .ic__text
+                                p Адрес фотостудии
+                                p Челябинск, Худякова, 12а
+                    nav.nav
+                        ul.nav__list
+                            li
+                                a.nav__link(href='') О компании
+                                svg.arrow_ic.ic
+                                    use(xlink:href='images/svg/sprite.svg#arrow-down')
+                                span.nav__arrow.arrow
+                                ul.sub-nav__list
+                                    li
+                                        a.sub-nav__link(href='') Наша фотостудия
+                                    li
+                                        a.sub-nav__link(href='') Отзывы
+                                    li
+                                        a.sub-nav__link(href='') Частые вопросы
+                            li
+                                a.nav__link(href='') Аренда залов
+                                svg.arrow_ic.ic
+                                    use(xlink:href='images/svg/sprite.svg#arrow-down')
+                                span.nav__arrow.arrow
+                                ul.sub-nav__list
+                                    li
+                                        a.sub-nav__link(href='') Второй
+                                    li
+                                        a.sub-nav__link(href='') Второй
+                                        svg.arrow_ic.ic
+                                            use(xlink:href='images/svg/sprite.svg#arrow-down')
+                                        span.sub-nav__arrow.arrow
+                                        ul.sub-sub-nav__list
+                                            li
+                                                a.sub-sub-nav__link(href='') Третий
+                                            li
+                                                a.sub-sub-nav__link(href='') Третий
+                                            li
+                                                a.sub-sub-nav__link(href='') Третий
+                                            li
+                                                a.sub-sub-nav__link(href='') Третий
+                                    li
+                                        a.sub-nav__link(href='') Второй
+                                    li
+                                        a.sub-nav__link(href='') Второй
+                            li
+                                a.nav__link(href='') Фотосессии
+                                svg.arrow_ic.ic
+                                    use(xlink:href='images/svg/sprite.svg#arrow-down')
+                                span.nav__arrow.arrow
+                                ul.sub-nav__list
+                                    li
+                                        a.sub-nav__link(href='') Второй
+                                    li
+                                        a.sub-nav__link(href='') Второй
+                                        svg.arrow_ic.ic
+                                            use(xlink:href='images/svg/sprite.svg#arrow-down')
+                                        span.sub-nav__arrow.arrow
+                                        ul.sub-sub-nav__list
+                                            li
+                                                a.sub-sub-nav__link(href='') Третий
+                                            li
+                                                a.sub-sub-nav__link(href='') Третий
+                                            li
+                                                a.sub-sub-nav__link(href='') Третий
+                                            li
+                                                a.sub-sub-nav__link(href='') Третий
+                                    li
+                                        a.sub-nav__link(href='') Второй
+                                    li
+                                        a.sub-nav__link(href='') Второй
+                            li
+                                a.nav__link(href='') Правила
+                            li
+                                a.nav__link(href='') Портфолио
+                            li
+                                a.nav__link(href='') Контакты
+                .header__text
+                    .header__title Детские фотосессии по разумным ценам
+                    .header__sub-title
+                        | Забронируйте фотосъёмку и получите скидку 50% на следующую фотосессию для всей семьи!
+                    button.btn Арендовать зал
+                    button.btn Арендовать зал
+        .swiper-container
+            .swiper-button-prev
+                svg.nav_ic.ic
+                    use(xlink:href='images/svg/sprite.svg#arrow-left')
+            .swiper-button-next
+                svg.nav_ic.ic
+                    use(xlink:href='images/svg/sprite.svg#arrow-right')
+            .swiper-wrapper
+                .swiper-slide.card
+                .swiper-slide.card
+                .swiper-slide.card
+            .swiper-pagination
+
+
+    <!-----------BENEFITS----------->
+    section.benefits
+        .wrapper
+            .benefits__inner
+                .section__text
+                    .square
+                    .sup-title НАШИ ПРЕИМУЩЕСТВА
+                    .title 5 причин прийти к нам
+                .benefits__content
+                  each value in benefits
+                    .benefits__item
+                        svg.benefits_ic.ic
+                            use(xlink:href=`images/svg/sprite.svg#${value.svg}`)
+                        .benefits__title #{value.name}
+                        .benefits__sub-title
+                            | #{value.body}
+
+    <!-----------STUDIO--------->
+    section.studio
+        .wrapper
+            .studio__inner
+                .section__text
+                    .square
+                    .sup-title О КОМПАНИИ
+                    .title Наша фотостудия
+                    .sub-title
+                        | Van Gog фотостудия это творческое арт - пространство для реализации любых идей и задач! Это не просто студия для сьемки, это целый комплекс услуг для вас и ваших близких!
+                    .text
+                        | Это не просто студия для сьемки, это целый комплекс услуг для вас и ваших близких!
+                    .text
+                        | Мы работаем по системе «все включено», обратившись к нам вам нужно только одно, рассказать, что вы хотите, а мы в свою очередь предложим варианты фотосъемки и варианты для реализации ваших идей.
+                    .section___btn
+                        button.btn Больше о фотостудии
+
+    <!-----------PHOTO SHOOT----------->
+    section.photoshoot
+        .wrapper
+            .photoshoot__inner
+                .section__text
+                    .square
+                    .sup-title УСЛУГИ
+                    .title Фотосессии
+                .photoshoot__content
+                  each value in photoshoot
+                    .photoshoot__item
+                        .photoshoot__img
+                            img(src=`${value.img}` alt='')
+                        .photoshoot__text(class=`${value.cut}`) #{value.name}
+                        .photoshoot__btn
+                            button.btn.btn--photoshoot
+                                svg.btn_ic.ic
+                                    use(xlink:href='images/svg/sprite.svg#arrow-right')
+
+
+    <!-----------HALLS----------->
+    section.halls
+        .wrapper
+            .halls__inner
+                .section__text
+                    .square
+                    .sup-title АРЕНДА
+                    .title Наши залы
+                .halls__content
+                    .halls__img
+                        .slider-container.halls__slider
+                            .swiper-container1
+                                .slider-buttons
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        img(src='images/halls.jpg' alt='')
+                                    .swiper-slide
+                                        img(src='images/halls.jpg' alt='')
+                                    .swiper-slide
+                                        img(src='images/halls.jpg' alt='')
+                                    .swiper-slide
+                                        img(src='images/halls.jpg' alt='')
+                        .halls__nav
+                            button.btn.btn--photoshoot.swiper-button-prev1
+                                svg.slider_ic.ic
+                                    use(xlink:href='images/svg/sprite.svg#arrow-left2')
+                            button.btn.btn--photoshoot.swiper-button-next1
+                                svg.slider_ic.ic
+                                    use(xlink:href='images/svg/sprite.svg#arrow-right2')
+                    .halls__text
+                        .halls__title Футуризм
+                        .halls__sub-title Просторный, светлый зал, выполненный в стиле футуризм и модерн.
+                        button.btn.btn--halls Узнать больше о зале
+
+
+    <!-----------CARDS----------->
+    section.cards
+        .wrapper
+            .cards__inner
+                .cards__item
+                    .cards__title Организация мероприятий в наших залах
+                    svg.slider_ic.ic
+                        use(xlink:href='images/svg/sprite.svg#arrow-right2')
+                    svg.cards_ic.ic
+                        use(xlink:href='images/svg/sprite.svg#rabbit')
+                .cards__item
+                    .cards__title Расписание и бронирование залов
+                    svg.slider_ic.ic
+                        use(xlink:href='images/svg/sprite.svg#arrow-right2')
+                    svg.cards_ic.ic
+                        use(xlink:href='images/svg/sprite.svg#tent')
+
+
